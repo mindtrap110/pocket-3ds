@@ -52,6 +52,7 @@ BUILD_OPTIONS=(
     CODE_SIGN_IDENTITY=
     DEVELOPMENT_TEAM=
     COMPILER_INDEX_STORE_ENABLE=NO
+    ONLY_ACTIVE_ARCH=YES
 )
 xcodebuild "${BUILD_OPTIONS[@]}" -resolvePackageDependencies 2>&1 | tee "$OUTPUT_DIR/packages.log"
 xcodebuild "${BUILD_OPTIONS[@]}" build 2>&1 | tee "$OUTPUT_DIR/xcodebuild.log"
