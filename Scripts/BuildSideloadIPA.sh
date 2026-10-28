@@ -36,11 +36,12 @@ fi
 
 python3 Scripts/ci/prepare_project.py --root "$PROJECT_ROOT" --bundle-id "$BUNDLE_ID"
 
+# Let the destination select the device SDK. A global -sdk breaks R.swift's
+# mixed macOS tool / iOS runtime dependency graph (R.swift issue #805).
 BUILD_OPTIONS=(
     -project "$PROJECT"
     -scheme ManicEmuSideload
     -configuration SideloadRelease
-    -sdk iphoneos
     -destination 'generic/platform=iOS'
     -derivedDataPath "$OUTPUT_DIR/DerivedData"
     -clonedSourcePackagesDirPath "$OUTPUT_DIR/SourcePackages"
