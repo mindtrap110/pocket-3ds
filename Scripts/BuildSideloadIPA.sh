@@ -116,7 +116,7 @@ for relative in ('Frameworks/azahar.libretro.framework/azahar.libretro', 'Framew
 for executable in executables:
     if not executable.is_file():
         raise SystemExit(f'error: Missing app, JIT helper, or 3DS core: {executable.name}')
-    subprocess.run(['lipo', '-verify_arch', 'arm64', str(executable)], check=True)
+    subprocess.run(['lipo', str(executable), '-verify_arch', 'arm64'], check=True)
 metadata = {
     'commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
     'bundle_id': bundle_id,
