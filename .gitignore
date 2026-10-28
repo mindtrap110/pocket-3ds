@@ -115,3 +115,6 @@ Scripts/find_unused_types.py
 
 #vscode
 .vscode
+
+# Python CI tools
+__pycache__/

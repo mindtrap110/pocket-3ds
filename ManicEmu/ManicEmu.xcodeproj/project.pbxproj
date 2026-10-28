@@ -13467,6 +13467,9 @@
 				57E8A110304A4A1100000009 /* PBXTargetDependency */,
 			);
 			name = ManicEmuSideload;
+			packageProductDependencies = (
+				576060282D24E8BD00A98B0C /* RswiftLibrary */,
+			);
 			productName = ManicEMU;
 			productReference = 5790958B303C7D9100A53656 /* ManicEmuSideload.app */;
 			productType = "com.apple.product-type.application";
